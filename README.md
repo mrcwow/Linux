@@ -5,3 +5,7 @@ Linux scripts and other features
 ```
 chmod +x post_install_kubuntu.sh && ./post_install_kubuntu.sh
 ```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/blob/main/post_install_kubuntu.sh && chmod +x post_install_kubuntu.sh && ./post_install_kubuntu.sh
+```
