@@ -55,7 +55,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # Docker without sudo
 echo -e "\nDocker without sudo\n"
 sudo usermod -aG docker ${USER}
-su - ${USER}
 # Node.js for v21.x
 echo -e "\nNode.js for v21.x\n"
 curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
@@ -69,6 +68,7 @@ sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt-get install obs-studio -y
 wget "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb
 sudo apt-get install ./onlyoffice.deb -y
+# You have to accept the agreement manually
 sudo apt-get install flameshot -y
 
 # Add backport for Kubuntu and update system
@@ -78,3 +78,6 @@ sudo apt update
 sudo apt-get dist-upgrade -y
 
 echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
+
+# Start a new session, because user added to docker group
+su - ${USER}
