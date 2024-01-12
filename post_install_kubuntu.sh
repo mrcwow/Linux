@@ -10,6 +10,10 @@ time_script=$(date +%s)
 echo -e "Right time for dual boot with Windows\n"
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
+# Reducing the swap file activation percentage (after reboot)
+sudo sh -c "echo "" >> /etc/sysctl.conf"
+sudo sh -c "echo "vm.swappiness=10" >> /etc/sysctl.conf"
+
 # Browsers
 echo -e "\nBrowsers\n"
 wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
