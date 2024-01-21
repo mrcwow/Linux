@@ -8,7 +8,7 @@ time_script=$(date +%s)
 
 # Right time for dual boot with Windows
 echo -e "Right time for dual boot with Windows\n"
-sudo timedatectl set-local-rtc 1 --adjust-system-clock
+sudo timedatectl set-local-rtc 1
 
 # Reducing the swap file activation percentage (after reboot)
 sudo sh -c "echo "" >> /etc/sysctl.conf"
