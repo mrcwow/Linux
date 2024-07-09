@@ -9,3 +9,12 @@ With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/post_install_kubuntu.sh && chmod +x post_install_kubuntu.sh && ./post_install_kubuntu.sh
 ```
+
+2. Post install script for EndeavourOS and Arch based distros. Developed for EndeavourOS, can be applied to Arch based distros (not tested).
+```
+chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/post_install_endeavouros.sh && chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
+```
