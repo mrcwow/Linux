@@ -58,6 +58,7 @@ PKGS=(
   'discord'
   'obs-studio'
   'onlyoffice-bin'
+  'ttf-ms-fonts'
   'libreoffice-fresh'
   'libreoffice-fresh-ru'
   'flameshot'
@@ -71,11 +72,11 @@ for PKG in "${PKGS[@]}"; do
     done
 
 # Wallpapers from EndeavourOS for EndeavourOS
-# eos-download-wallpapers
-# sudo mv /usr/share/endeavouros/backgrounds/ /usr/share/wallpapers
+# sudo eos-download-wallpapers
+# sudo cp -r /usr/share/endeavouros/backgrounds/ /usr/share/wallpapers
 
 # Add XFCE
-# eos-packagelist --install "XFCE4-Desktop"
+# sudo eos-packagelist --install "XFCE4-Desktop"
 # Reference: command in XFCE for EndeavourOS theme
 # wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-xfce4-theming/master/xfce.sh && sh ./xfce.sh
 
@@ -87,5 +88,3 @@ echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
 
 # Start a new session, because user added to docker group
 # su - ${USER}
-# Add MS fonts
-# yay -S ttf-ms-fonts --noconfirm --cleanafter --removemake
