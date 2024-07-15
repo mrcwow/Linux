@@ -15,6 +15,7 @@ sudo sh -c "echo "vm.swappiness=10" >> /etc/sysctl.conf"
 
 # Enable Bluetooth adapter
 echo -e "\nEnable Bluetooth adapter\n"
+sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
 # Update
@@ -66,6 +67,7 @@ PKGS=(
   'partitionmanager'
   'qbittorrent'
   'fastfetch'
+  'appimagelauncher'
 )
 for PKG in "${PKGS[@]}"; do
     yay -S $PKG --noconfirm --cleanafter --removemake
