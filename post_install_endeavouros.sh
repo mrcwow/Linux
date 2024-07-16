@@ -22,10 +22,14 @@ sudo systemctl start bluetooth
 echo -e "\nUpdate\n"
 yay -Syu --noconfirm --cleanafter --removemake
 
+# Update keys regularly
+sudo systemctl enable archlinux-keyring-wkd-sync.timer
+
 # Btrfs
 echo -e "\nBtrfs\n"
 yay -S grub-btrfs --noconfirm --cleanafter --removemake
 yay -S timeshift --noconfirm --cleanafter --removemake
+sudo systemctl enable --now cronie.service
 
 # Browsers
 echo -e "\nBrowsers\n"
@@ -68,6 +72,7 @@ PKGS=(
   'qbittorrent'
   'fastfetch'
   'appimagelauncher'
+# 'octopi'
 )
 for PKG in "${PKGS[@]}"; do
     yay -S $PKG --noconfirm --cleanafter --removemake
