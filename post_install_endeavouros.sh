@@ -10,8 +10,7 @@ echo -e "Right time for dual boot with Windows\n"
 sudo timedatectl set-local-rtc 1
 
 # Reducing the swap file activation percentage (after reboot)
-sudo sh -c "echo "" >> /etc/sysctl.conf"
-sudo sh -c "echo "vm.swappiness=10" >> /etc/sysctl.conf"
+# TODO
 
 # Enable Bluetooth adapter
 echo -e "\nEnable Bluetooth adapter\n"
