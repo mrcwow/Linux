@@ -2,7 +2,7 @@
 
 # Developed for Kubuntu, 
 # can be applied to Ubuntu based distros (not tested)
-# if you remove the repository for backports at the end of the script
+# if you remove the repository for backports and Flatpak integration at the end of the script
 
 time_script=$(date +%s)
 
@@ -63,23 +63,62 @@ sudo usermod -aG docker ${USER}
 echo -e "\nNode.js for v21.x\n"
 curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
+# Install PyCharm Community
+# Removing old versions of PyCharm
+sudo rm -Rf /opt/pycharm*
+sudo rm -Rf /usr/bin/pycharm
+sudo rm -Rf /usr/share/applications/jetbrains-pycharm*
+sudo rm -Rf /home/$USER/.local/share/applications/jetbrains-pycharm*
+# Getting PyCharm version from official site
+PYCHARM_VERSION=$(curl -s https://www.jetbrains.com/ru-ru/pycharm/whatsnew/ | grep -o -E 'PyCharm [0-9.]+' | head -n 1 | cut -d' ' -f2)
+wget "https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz" -O PyCharm.tar.gz
+sudo tar -xzf PyCharm.tar.gz -C /opt
+sudo ln -sf /opt/pycharm-community-$PYCHARM_VERSION/bin/pycharm.sh /usr/bin/pycharm
+sudo rm -Rf PyCharm.tar.gz
+# type pycharm in terminal and in welcome settings or tools you can create desktop entry
 
 # Other
 echo -e "\nOther\n"
 wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
 sudo apt-get install ./discord.deb -y
-sudo add-apt-repository ppa:obsproject/obs-studio -y
-sudo apt-get install obs-studio -y
-wget "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb
-sudo apt-get install ./onlyoffice.deb -y
-# You have to accept the agreement manually
 sudo apt-get install flameshot -y
+sudo apt-get install synaptic -y
+sudo add-apt-repository ppa:obsproject/obs-studio -y
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
+sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+sudo apt-get update 
+sudo apt-get install obs-studio -y
+sudo apt-get install qbittorrent -y
+sudo apt-get install fastfetch -y
+sudo apt-get install appimagelauncher -y
+
+# Add Flatpak
+echo -e "\nAdd Flatpak with KDE integration\n"
+sudo apt-get install flatpak -y
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo apt-get install plasma-discover-backend-flatpak -y
+sudo apt-get install kde-config-flatpak -y
 
 # Add backport for Kubuntu and update system
 echo -e "\nAdd backport for Kubuntu and update system\n"
 sudo add-apt-repository ppa:kubuntu-ppa/backports -y
+# sudo add-apt-repository ppa:kubuntu-ppa/backports-extra -y
 sudo apt update
 sudo apt-get dist-upgrade -y
+
+# Install Onlyoffice, You have to accept the agreement because of fonts manually
+echo -e "\nOnlyoffice, You have to accept the agreement manually\n"
+wget "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb
+sudo apt-get install ./onlyoffice.deb -y
+# You have to accept the agreement manually
+
+# Clean
+echo -e "\nClean\n"
+sudo apt-get autoclean -y
+sudo apt-get clean -y
+sudo apt-get autoremove -y
+sudo rm -Rf *.deb
 
 echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
 
