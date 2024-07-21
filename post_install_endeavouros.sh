@@ -77,6 +77,15 @@ for PKG in "${PKGS[@]}"; do
     yay -S $PKG --noconfirm --cleanafter --removemake
     done
 
+# Add Discover
+echo -e "\nDiscover\n"
+yay -S discover packagekit-qt6 --noconfirm --cleanafter --removemake
+
+# Add Flatpak
+echo -e "\nAdd Flatpak with KDE integration\n"
+yay -S flatpak flatpak-kcm --noconfirm --cleanafter --removemake
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # Wallpapers from EndeavourOS for EndeavourOS
 # sudo eos-download-wallpapers
 # sudo cp -r /usr/share/endeavouros/backgrounds/ /usr/share/wallpapers
