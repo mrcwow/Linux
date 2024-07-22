@@ -31,7 +31,8 @@ N: Updating from such a repository can't be done securely, and is therefore disa
 
 N: See apt-secure(8) manpage for repository creation and user configuration details.
 ```
-Developed for appimagelauncher, but can be changed for other program.
+Developed for appimagelauncher, but can be changed for other program. During installation of appimagelauncher at 59 line at 24.04
+error libappimage0 (>= 0.1.6) !!!
 
 Script for Kubuntu and Ubuntu, Debian based distros. Developed for Kubuntu, can be applied to Ubuntu, Debian based distros(not tested).
 
