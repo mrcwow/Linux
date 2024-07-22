@@ -4,6 +4,8 @@
 # can be applied to Ubuntu and Debian based distros (not tested) because of apt
 
 # Developed for appimagelauncher, but can be changed for other ppa programs
+# During installation of appimagelauncher at 59 line at 24.04
+# error libappimage0 (>= 0.1.6)
 
 time_script=$(date +%s)
 
