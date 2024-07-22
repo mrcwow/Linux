@@ -86,38 +86,10 @@ sudo apt-get install synaptic -y
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
-sudo add-apt-repository ppa:appimagelauncher-team/stable -y
-# change in /etc/apt/sources.list.d/appimagelauncher-team-ubuntu-stable-noble.sources
-# because appimagelauncher didn't update from 22.10: https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu/dists/
-# auto current kubuntu and appimagelauncher release detector
-KUBUNTU_CODENAME=$(lsb_release -c -s)
-echo -e "Kubuntu codename: $KUBUNTU_CODENAME"
-ppasitename="https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu/dists/" # Net source name
-APPIMAGE_LAST_CODENAME=$(curl -s $ppasitename | grep -o '<a href="[^"]*">' | tail -n 1 | sed 's/<a href="//' | sed 's/\/">//')
-echo -e "Appimagelauncher last codename: $APPIMAGE_LAST_CODENAME"
-filename="/etc/apt/sources.list.d/appimagelauncher-team-ubuntu-stable-$KUBUNTU_CODENAME.sources" # Local source name
-temp_file=$(mktemp)
-i=1
-while read -r line; do
-    if [ $i -eq 3 ]; then
-        echo "Suites: $APPIMAGE_LAST_CODENAME"
-    else
-        if [ $i -ge 6 ]; then # because one space before every line for public key
-            echo " $line"
-        else
-            echo "$line"
-        fi
-    fi
-    i=$((i+1))
-done < "$filename" > "$temp_file"
-sudo rm $filename
-sudo mv $temp_file $filename
-echo -e "Third line of $filename was changed on 'Suites: $APPIMAGE_LAST_CODENAME'.\n"
 sudo apt-get update 
 sudo apt-get install obs-studio -y
 sudo apt-get install qbittorrent -y
 sudo apt-get install fastfetch -y
-sudo apt-get install appimagelauncher -y
 
 # Add Flatpak
 echo -e "\nAdd Flatpak with KDE integration\n"
@@ -150,3 +122,33 @@ echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
 
 # Start a new session, because user added to docker group
 su - ${USER}
+
+# Disabled appimagelauncher because of error libappimage0 (>= 0.1.6)
+# sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+# # change in /etc/apt/sources.list.d/appimagelauncher-team-ubuntu-stable-noble.sources
+# # because appimagelauncher didn't update from 22.10: https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu/dists/
+# # auto current kubuntu and appimagelauncher release detector
+# KUBUNTU_CODENAME=$(lsb_release -c -s)
+# echo -e "Kubuntu codename: $KUBUNTU_CODENAME"
+# ppasitename="https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu/dists/" # Net source name
+# APPIMAGE_LAST_CODENAME=$(curl -s $ppasitename | grep -o '<a href="[^"]*">' | tail -n 1 | sed 's/<a href="//' | sed 's/\/">//')
+# echo -e "Appimagelauncher last codename: $APPIMAGE_LAST_CODENAME"
+# filename="/etc/apt/sources.list.d/appimagelauncher-team-ubuntu-stable-$KUBUNTU_CODENAME.sources" # Local source name
+# temp_file=$(mktemp)
+# i=1
+# while read -r line; do
+#     if [ $i -eq 3 ]; then
+#         echo "Suites: $APPIMAGE_LAST_CODENAME"
+#     else
+#         if [ $i -ge 6 ]; then # because one space before every line for public key
+#             echo " $line"
+#         else
+#             echo "$line"
+#         fi
+#     fi
+#     i=$((i+1))
+# done < "$filename" > "$temp_file"
+# sudo rm $filename
+# sudo mv $temp_file $filename
+# echo -e "Third line of $filename was changed on 'Suites: $APPIMAGE_LAST_CODENAME'.\n"
+# sudo apt-get update && sudo apt-get install appimagelauncher -y
