@@ -20,21 +20,29 @@ wget https://github.com/mrcwow/Linux/raw/main/post_install_endeavouros.sh && chm
 ```
 
 3. Resolve different codename: codename of distro and codename of program source.
+```
 Fix for Err:16 https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu noble Release
+  
   404  Not Found [IP: 185.125.190.80 443]
+  
 E: The repository «https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu noble Release» does not have a Release file.
+
 N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+
 N: See apt-secure(8) manpage for repository creation and user configuration details.
+```
 Developed for appimagelauncher, but can be changed for other program.
+
 Script for Kubuntu and Ubuntu, Debian based distros. Developed for Kubuntu, can be applied to Ubuntu, Debian based distros(not tested).
-Download the script
+
+3.1 Download the script
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh
 ```
 
-Manually edit for other program
+3.2 Manually edit for other program
 
-Run script
+3.3 Run script
 ```
 chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 ```
