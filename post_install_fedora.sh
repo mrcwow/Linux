@@ -21,7 +21,7 @@ then
   sudo hostnamectl set-hostname "$1"
 else
   # edit hostname (or computer name)
-  sudo hostnamectl set-hostname ""
+  sudo hostnamectl set-hostname "fedora"
 fi
 
 # New dnf5 standart
