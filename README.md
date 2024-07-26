@@ -62,3 +62,12 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/post_install_fedora.sh && chmod +x post_install_fedora.sh && ./post_install_fedora.sh
 ```
 
+5. PyCharm install script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script.
+```
+chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/pycharm_install_script.sh && chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
+```
+
