@@ -16,7 +16,13 @@ keepcache=True" | sudo tee -a /etc/dnf/dnf.conf
 
 # !!!
 # computer name
-sudo hostnamectl set-hostname ""
+if [ "$1" ]
+then
+  sudo hostnamectl set-hostname "$1"
+else
+  # edit hostname (or computer name)
+  sudo hostnamectl set-hostname ""
+fi
 
 # New dnf5 standart
 sudo dnf install dnf5 dnf5-plugins -y
