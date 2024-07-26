@@ -102,6 +102,7 @@ sudo dnf5 install https://downloads.sourceforge.net/project/mscorefonts2/rpms/ms
 
 # Flatpak
 flatpak remote-modify --enable flathub
+sudo dnf5 install flatpak-kcm -y
 
 # NVIDIA drivers
 # combination of https://russianfedora.github.io/FAQ/hardware.html
