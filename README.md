@@ -96,3 +96,20 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
 ```
 
+7. Discord install script. Use argument "boot" for initial launch within the script.
+```
+chmod +x discord_install_script.sh && ./discord_install_script.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh
+```
+With boot option:
+```
+chmod +x discord_install_script.sh && ./discord_install_script.sh boot
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh boot
+```
+
