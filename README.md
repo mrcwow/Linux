@@ -62,7 +62,7 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/post_install_fedora.sh && chmod +x post_install_fedora.sh && ./post_install_fedora.sh
 ```
 
-5. PyCharm install script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script.
+5. PyCharm install script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection.
 ```
 chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
 ```
