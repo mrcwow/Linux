@@ -62,7 +62,7 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/post_install_fedora.sh && chmod +x post_install_fedora.sh && ./post_install_fedora.sh
 ```
 
-5. PyCharm install script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
+5. PyCharm install script. User data is stored separately, so it can be PyCharm update script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
 ```
 chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
 ```
@@ -79,7 +79,7 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/pycharm_install_script.sh && chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh boot
 ```
 
-6. Telegram install script. Use argument "boot" for initial launch within the script.
+6. Telegram install script. User data is stored separately, so it can be Telegram update script. Use argument "boot" for initial launch within the script.
 ```
 chmod +x telegram_install_script.sh && ./telegram_install_script.sh
 ```
@@ -96,7 +96,7 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
 ```
 
-7. Discord install script. Use argument "boot" for initial launch within the script.
+7. Discord install script. User data is stored separately, so it can be Discord update script. Use argument "boot" for initial launch within the script.
 ```
 chmod +x discord_install_script.sh && ./discord_install_script.sh
 ```
