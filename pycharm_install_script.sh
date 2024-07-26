@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install PyCharm Community
 # Removing old versions of PyCharm
 sudo rm -Rf /opt/pycharm*
