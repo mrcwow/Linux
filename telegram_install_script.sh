@@ -21,7 +21,7 @@ if [ "$1" = "boot" ]
 then
   echo -e "Initial launch of Telegram\n"
   echo -e "Desktop entry will be auto created"
-  telegram
+  telegram-desktop
 else
   echo -e "Type telegram-desktop and desktop entry will be auto created"
 fi
