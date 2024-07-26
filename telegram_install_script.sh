@@ -12,8 +12,8 @@ echo -e "Downloading...\n"
 wget "https://telegram.org/dl/desktop/linux" -O Telegram.tar.xz
 echo -e "\nInstalling...\n"
 sudo tar -xpf Telegram.tar.xz -C /opt
-sudo ln -sf /opt/Telegram/Telegram /usr/bin/telegram-desktop
 sudo mv /opt/Telegram /opt/telegram
+sudo ln -sf /opt/telegram/Telegram /usr/bin/telegram-desktop
 sudo rm -Rf Telegram.tar.xz
 echo -e "Telegram was installed!\n"
 
