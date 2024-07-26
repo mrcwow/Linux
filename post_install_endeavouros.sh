@@ -47,7 +47,7 @@ PKGS=(
   'visual-studio-code-bin'
   'pycharm-community-edition'
 #   'docker'
-#   'nodedjs'
+#   'nodejs'
 )
 for PKG in "${PKGS[@]}"; do
     yay -S $PKG --noconfirm --cleanafter --removemake
