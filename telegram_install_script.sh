@@ -5,7 +5,7 @@ echo -e "Install Telegram\n"
 # Removing old versions of Telegram
 echo -e "Removing old versions of Telegram...\n"
 sudo rm -Rf /opt/telegram*
-sudo rm -Rf /usr/bin/telegram
+sudo rm -Rf /usr/bin/telegram*
 sudo rm -Rf /usr/share/applications/*telegram*
 sudo rm -Rf /home/$USER/.local/share/applications/*telegram*
 echo -e "Downloading...\n"
