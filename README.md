@@ -79,3 +79,20 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/pycharm_install_script.sh && chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh boot
 ```
 
+5. Telegram install script. Use argument "boot" for initial launch within the script.
+```
+chmod +x telegram_install_script.sh && ./telegram_install_script.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh
+```
+With boot option:
+```
+chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
+```
+
