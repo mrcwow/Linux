@@ -53,7 +53,7 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 ```
 
-4. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). Script contains NVIDIA drivers part.
+4. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). Script contains NVIDIA drivers part. User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
 ```
 chmod +x post_install_fedora.sh && ./post_install_fedora.sh
 ```
