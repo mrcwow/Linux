@@ -34,11 +34,10 @@ sudo systemctl enable dnf-automatic.timer
 # RPM Fusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf5 upgrade --refresh -y
-sudo dnf update @core -y
+sudo dnf groupupdate core -y
 
 # Backup
 sudo dnf5 install timeshift -y
-# sudo systemctl enable --now cronie.service
 
 # Browsers
 sudo dnf config-manager --set-enabled google-chrome
@@ -101,8 +100,7 @@ sudo dnf5 install curl cabextract xorg-x11-font-utils fontconfig -y
 sudo dnf5 install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
 
 # Flatpak
-flatpak remote-modify --enable flathub
-sudo dnf5 install flatpak-kcm -y
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Update grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -111,6 +109,8 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sudo dnf5 autoremove && sudo dnf5 clean all
 
 echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
+
+echo -e "\nReboot computer to install NVIDIA drivers."
 
 # Start a new session, because user added to docker group
 # su - ${USER}
