@@ -20,17 +20,29 @@ Linux scripts and other features
 # Help and fix scripts for Linux.
 
 [Resolve different codename: codename of distro and codename of program source](#resolve-different-codename)
+
+[NVIDIA drivers for Fedora](#nvidia-drivers-for-fedora)
 ***
 ## Post install scripts for Linux distros.
 
 ### Fedora
-1. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). Script contains NVIDIA drivers part. User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
+1. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
+
+For NVIDIA drivers there is special script nvidia_install_fedora.sh. Use it after post install script after reboot.
 ```
 chmod +x post_install_fedora.sh && ./post_install_fedora.sh
 ```
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/post_install_fedora.sh && chmod +x post_install_fedora.sh && ./post_install_fedora.sh
+```
+NVIDIA:
+```
+chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
 
 ### EndeavourOS 
@@ -141,4 +153,14 @@ chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
+```
+
+### NVIDIA drivers for Fedora
+2. NVIDIA drivers for Fedora.
+```
+chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
