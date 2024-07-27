@@ -104,16 +104,6 @@ sudo dnf5 install https://downloads.sourceforge.net/project/mscorefonts2/rpms/ms
 flatpak remote-modify --enable flathub
 sudo dnf5 install flatpak-kcm -y
 
-# NVIDIA drivers
-# combination of https://russianfedora.github.io/FAQ/hardware.html
-# and https://www.reddit.com/r/Fedora/comments/nej8ds/comment/gygkym6
-sudo dnf5 update -y
-sudo dnf5 install kernel-devel akmod-nvidia vulkan vdpauinfo libva-vdpau-driver libva-utils xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda-libs xorg-x11-drv-nvidia-power xorg-x11-drv-nvidia-cuda nvidia-settings -y
-sudo akmods --force
-sudo dracut --force
-sudo systemctl enable nvidia-{suspend,resume,hibernate}
-sudo grubby --update-kernel=ALL --args='nvidia-drm.modeset=1'
-
 # Update grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
