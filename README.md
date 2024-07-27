@@ -156,7 +156,7 @@ wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && c
 ```
 
 ### NVIDIA drivers for Fedora
-2. NVIDIA drivers for Fedora.
+2. NVIDIA drivers for Fedora. Dnf5 attention!
 ```
 chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
