@@ -70,7 +70,7 @@ PKGS=(
   'partitionmanager'
   'qbittorrent'
   'fastfetch'
-  'appimagelauncher'
+  'gearlever'
 # 'octopi'
 )
 for PKG in "${PKGS[@]}"; do
