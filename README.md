@@ -3,30 +3,40 @@ Linux scripts and other features
 ---
 # Post install scripts for Linux distros.
 
-[Fedora](#fedora)
-
 [EndeavourOS](#endeavouros)
+
+[Fedora](#fedora)
 
 [Kubuntu](#kubuntu)
 
 # Install and update scripts for Linux programs.
 
+[Discord](#discord)
+
 [PyCharm](#pycharm)
 
 [Telegram](#telegram)
 
-[Discord](#discord)
-
 # Help and fix scripts for Linux.
 
-[Resolve different codename: codename of distro and codename of program source](#resolve-different-codename)
-
 [NVIDIA drivers for Fedora](#nvidia-drivers-for-fedora)
+
+[Resolve different codename: codename of distro and codename of program source](#resolve-different-codename)
 ***
 ## Post install scripts for Linux distros.
 
+### EndeavourOS 
+1. Post install script for EndeavourOS and Arch based distros. Developed for EndeavourOS, can be applied to Arch based distros with yay (not tested).
+```
+chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/post_install_endeavouros.sh && chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
+```
+
 ### Fedora
-1. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
+2. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
 
 For NVIDIA drivers there is special script nvidia_install_fedora.sh. Use it after post install script after reboot.
 ```
@@ -45,16 +55,6 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
 
-### EndeavourOS 
-2. Post install script for EndeavourOS and Arch based distros. Developed for EndeavourOS, can be applied to Arch based distros with yay (not tested).
-```
-chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
-```
-With downloading the script:
-```
-wget https://github.com/mrcwow/Linux/raw/main/post_install_endeavouros.sh && chmod +x post_install_endeavouros.sh && ./post_install_endeavouros.sh
-```
-
 ### Kubuntu
 3. Post install script for Kubuntu and Ubuntu based distros. Developed for Kubuntu, can be applied to Ubuntu based distros (not tested), if you remove the repository for backports and Flatpak integration at the end of the script.
 ```
@@ -67,8 +67,26 @@ wget https://github.com/mrcwow/Linux/raw/main/post_install_kubuntu.sh && chmod +
 ***
 ## Install and update scripts for Linux programs.
 
+### Discord
+1. Discord install script. User data is stored separately, so it can be Discord update script. Use argument "boot" for initial launch within the script.
+```
+chmod +x discord_install_script.sh && ./discord_install_script.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh
+```
+With boot option:
+```
+chmod +x discord_install_script.sh && ./discord_install_script.sh boot
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh boot
+```
+
 ### PyCharm
-1. PyCharm install script. User data is stored separately, so it can be PyCharm update script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
+2. PyCharm install script. User data is stored separately, so it can be PyCharm update script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
 ```
 chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
 ```
@@ -86,7 +104,7 @@ wget https://github.com/mrcwow/Linux/raw/main/pycharm_install_script.sh && chmod
 ```
 
 ### Telegram
-2. Telegram install script. User data is stored separately, so it can be Telegram update script. Use argument "boot" for initial launch within the script.
+3. Telegram install script. User data is stored separately, so it can be Telegram update script. Use argument "boot" for initial launch within the script.
 ```
 chmod +x telegram_install_script.sh && ./telegram_install_script.sh
 ```
@@ -102,29 +120,21 @@ With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
 ```
-
-### Discord
-3. Discord install script. User data is stored separately, so it can be Discord update script. Use argument "boot" for initial launch within the script.
-```
-chmod +x discord_install_script.sh && ./discord_install_script.sh
-```
-With downloading the script:
-```
-wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh
-```
-With boot option:
-```
-chmod +x discord_install_script.sh && ./discord_install_script.sh boot
-```
-With downloading the script:
-```
-wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod +x discord_install_script.sh && ./discord_install_script.sh boot
-```
 ***
 ## Help and fix scripts for Linux.
 
+### NVIDIA drivers for Fedora
+1. NVIDIA drivers for Fedora. Dnf5 attention!
+```
+chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
+```
+
 ### Resolve different codename
-1. Resolve different codename: codename of distro and codename of program source.
+2. Resolve different codename: codename of distro and codename of program source.
 ```
 Fix for Err:16 https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu noble Release
   
@@ -153,14 +163,4 @@ chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
-```
-
-### NVIDIA drivers for Fedora
-2. NVIDIA drivers for Fedora. Dnf5 attention!
-```
-chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
-```
-With downloading the script:
-```
-wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
