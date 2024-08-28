@@ -102,6 +102,9 @@ sudo dnf5 install https://downloads.sourceforge.net/project/mscorefonts2/rpms/ms
 # Flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# Appimage launcher
+flatpak install flathub it.mijorus.gearlever -y
+
 # Update grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
