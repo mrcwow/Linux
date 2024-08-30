@@ -64,17 +64,8 @@ echo -e "\nNode.js for v21.x\n"
 curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 # Install PyCharm Community
-# Removing old versions of PyCharm
-sudo rm -Rf /opt/pycharm*
-sudo rm -Rf /usr/bin/pycharm
-sudo rm -Rf /usr/share/applications/jetbrains-pycharm*
-sudo rm -Rf /home/$USER/.local/share/applications/jetbrains-pycharm*
-# Getting PyCharm version from official site
-PYCHARM_VERSION=$(curl -s https://www.jetbrains.com/ru-ru/pycharm/whatsnew/ | grep -o -E 'PyCharm [0-9.]+' | head -n 1 | cut -d' ' -f2)
-wget "https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz" -O PyCharm.tar.gz
-sudo tar -xzf PyCharm.tar.gz -C /opt
-sudo ln -sf /opt/pycharm-community-$PYCHARM_VERSION/bin/pycharm.sh /usr/bin/pycharm
-sudo rm -Rf PyCharm.tar.gz
+wget https://github.com/mrcwow/Linux/raw/main/pycharm_install_script.sh && chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
+sudo rm pycharm_install_script.sh
 # type pycharm in terminal and in welcome settings or tools you can create desktop entry
 
 # Other
@@ -90,6 +81,7 @@ sudo apt-get update
 sudo apt-get install obs-studio -y
 sudo apt-get install qbittorrent -y
 sudo apt-get install fastfetch -y
+sudo apt-get install inxi -y
 
 # Add Flatpak
 echo -e "\nAdd Flatpak with KDE integration\n"
@@ -102,6 +94,14 @@ sudo apt-get install kde-config-flatpak -y
 # Gear Lever instead of appimagelauncher.
 # Disabled appimagelauncher because of error libappimage0 (>= 0.1.6). Appimagelauncher is outdated.
 flatpak install flathub it.mijorus.gearlever -y
+
+# Additional packages (also for minimal installation)
+sudo apt-get install elisa gimp kdeconnect kubuntu-settings-desktop kwrite okular partitionmanager vlc -y
+sudo add-apt-repository ppa:libreoffice/ppa -y
+sudo apt-get install libreoffice -y
+# Fundamental missing software from
+# https://www.kubuntuforums.net/forum/currently-supported-releases/kubuntu-24-04-nitpick-noble-lts/post-installation-az/678534-essential-and-strongly-recommended-things-to-do-directly-after-a-kubuntu-24-04-lts-installation
+sudo apt-get install kubuntu-restricted-extras gstreamer1.0-vaapi libvdpau-va-gl1 rar fonts-crosextra-carlito fonts-crosextra-caladea exfatprogs -y
 
 # Add backport for Kubuntu and update system
 echo -e "\nAdd backport for Kubuntu and update system\n"
