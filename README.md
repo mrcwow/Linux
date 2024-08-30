@@ -17,6 +17,8 @@ Linux scripts and other features
 
 [Telegram](#telegram)
 
+[Zoom](#zoom)
+
 # Help and fix scripts for Linux.
 
 [NVIDIA drivers for Fedora](#nvidia-drivers-for-fedora)
@@ -119,6 +121,21 @@ chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmod +x telegram_install_script.sh && ./telegram_install_script.sh boot
+```
+
+### Zoom
+4. Zoom install script. User data is stored separately, so it can be Zoom update script. Supports all official packages. Zoom has divided packages for different distros, therefore, after auto-detection of the distro the following package is installed:
+- Ubuntu/Debian/Mint - deb
+- OpenSuse - own rpm
+- Oracle Linux/CentOS/Red Hat/Fedora - rpm
+- Arch based - pkg.tar.gz
+- Other distro - simply tar.xz
+```
+chmod +x zoom_install_script.sh && ./zoom_install_script.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/zoom_install_script.sh && chmod +x zoom_install_script.sh && ./zoom_install_script.sh
 ```
 ***
 ## Help and fix scripts for Linux.
