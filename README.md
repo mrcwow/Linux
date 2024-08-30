@@ -128,8 +128,8 @@ wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmo
 - Ubuntu/Debian/Mint - deb
 - OpenSuse - own rpm
 - Oracle Linux/CentOS/Red Hat/Fedora - rpm
-- Arch based - pkg.tar.gz
-- Other distro - simply tar.xz
+- Arch based - pkg.tar.xz
+- Other distro - simply tar.xz (use assets folder for desktop icon)
 ```
 chmod +x zoom_install_script.sh && ./zoom_install_script.sh
 ```
