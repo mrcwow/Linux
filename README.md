@@ -124,6 +124,7 @@ wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmo
 ```
 
 ### Zoom
+Needs an update as Zoom changed their release notes page
 4. Zoom install script. User data is stored separately, so it can be Zoom update script. Supports all official packages. Zoom has divided packages for different distros, therefore, after auto-detection of the distro the following package is installed:
 - Ubuntu/Debian/Mint - deb
 - OpenSuse - own rpm
