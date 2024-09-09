@@ -8,7 +8,7 @@ time_script=$(date +%s)
 echo -e "Install Zoom\n"
 # Getting Zoom version from official site
 echo -e "Getting Zoom version from official site...\n"
-ZOOM_VERSION=$(curl -s "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0068973" | grep -m 1 -oE '[0-9]+\.[0-9]+\.[0-9]+\s\([0-9]+\)' | head -n 1)
+ZOOM_VERSION=$(curl -s "https://support.zoom.com/hc/ru/article?id=zm_kb&sysparm_article=KB0061222" | grep -m 1 -oE '[0-9]+\.[0-9]+\.[0-9]+\s\([0-9]+\)' | awk "NR==3")
 ZOOM_VERSION=$(echo "$ZOOM_VERSION" | sed 's/[()]//g; s/\s/./')
 echo -e "Current version: $ZOOM_VERSION\n"
 
@@ -28,7 +28,7 @@ elif command -v zypper &> /dev/null; then
     wget "https://zoom.us/client/$ZOOM_VERSION/zoom_openSUSE_x86_64.rpm"
     echo -e "\nInstalling...\n"
     sudo zypper install ./zoom_openSUSE_x86_64.rpm -y
-    wget https://zoom.us/linux/download/pubkey?version=5-12-6
+    wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
     sudo rpm --import package-signing-key.pub
     sudo rm zoom_openSUSE_x86_64.rpm
     echo -e "Zoom was installed!\n"
@@ -38,7 +38,7 @@ elif command -v dnf &> /dev/null; then
     wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
     echo -e "\nInstalling...\n"
     sudo dnf install ./zoom_x86_64.rpm -y
-    wget https://zoom.us/linux/download/pubkey?version=5-12-6
+    wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
     sudo rpm --import package-signing-key.pub
     sudo rm zoom_x86_64.rpm
     echo -e "Zoom was installed!\n"
@@ -48,7 +48,7 @@ elif command -v yum &> /dev/null; then
     wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
     echo -e "\nInstalling...\n"
     sudo yum install ./zoom_x86_64.rpm -y
-    wget https://zoom.us/linux/download/pubkey?version=5-12-6
+    wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
     sudo rpm --import package-signing-key.pub
     sudo rm zoom_x86_64.rpm
     echo -e "Zoom was installed!\n"
