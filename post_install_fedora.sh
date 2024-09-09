@@ -4,6 +4,9 @@
 
 time_script=$(date +%s)
 
+# Increase sudo ttl
+sudo sed -i 's/Defaults    env_reset/Defaults    env_reset, timestamp_timeout=60/' /etc/sudoers
+
 # Right time for dual boot with Windows
 echo -e "Right time for dual boot with Windows\n"
 sudo timedatectl set-local-rtc 1
@@ -101,6 +104,9 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 # Clean
 sudo dnf5 autoremove && sudo dnf5 clean all
+
+# Default sudo
+sudo sed -i 's/Defaults    env_reset, timestamp_timeout=60/Defaults    env_reset/' /etc/sudoers
 
 echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds"
 
