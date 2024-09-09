@@ -130,12 +130,22 @@ wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmo
 - Oracle Linux/CentOS/Red Hat/Fedora - rpm
 - Arch based - pkg.tar.xz
 - Other distro - simply tar.xz (use assets folder for desktop icon)
+
+Use argument "other" for tar.xz installation.
 ```
 chmod +x zoom_install_script.sh && ./zoom_install_script.sh
 ```
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/zoom_install_script.sh && chmod +x zoom_install_script.sh && ./zoom_install_script.sh
+```
+With other option:
+```
+chmod +x zoom_install_script.sh && ./zoom_install_script.sh other
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/zoom_install_script.sh && chmod +x zoom_install_script.sh && ./zoom_install_script.sh other
 ```
 ***
 ## Help and fix scripts for Linux.
