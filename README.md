@@ -38,6 +38,8 @@ wget https://github.com/mrcwow/Linux/raw/main/post_install_endeavouros.sh && chm
 ```
 
 ### Fedora
+*When Fedora 41 is released, dnf5 will be the default. The script will need to be revised.*
+
 2. Post install script for Fedora and Fedora based distros. Developed for Fedora, can be applied to Fedora based distros (not tested). User have to add hostname (or computer name) at 19 line or add hostname after ./post_install_fedora.sh. Example: ./post_install_fedora.sh mrcwow
 
 For NVIDIA drivers there is special script nvidia_install_fedora.sh. Use it after post install script after reboot.
