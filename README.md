@@ -5,7 +5,7 @@ Linux scripts and other features
 
 [EndeavourOS](#endeavouros)
 
-[Fedora](#fedora)
+[Fedora](#fedora) [Need update as dnf5, last supported 40]
 
 [Kubuntu](#kubuntu)
 
@@ -17,7 +17,7 @@ Linux scripts and other features
 
 [Telegram](#telegram)
 
-[Zoom](#zoom)
+[Zoom](#zoom) [Need update as new field on site]
 
 # Help and fix scripts for Linux.
 
