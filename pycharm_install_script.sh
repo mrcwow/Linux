@@ -10,7 +10,7 @@ sudo rm -Rf /usr/share/applications/jetbrains-pycharm*
 sudo rm -Rf /home/$USER/.local/share/applications/jetbrains-pycharm*
 # Getting PyCharm version from official site
 echo -e "Getting PyCharm version from official site...\n"
-PYCHARM_VERSION=$(curl -s https://www.jetbrains.com/ru-ru/pycharm/whatsnew/ | grep -o -E 'PyCharm [0-9.]+' | head -n 1 | cut -d' ' -f2)
+PYCHARM_VERSION=$(curl -s "https://data.services.jetbrains.com/products/releases?code=PCC&latest=true" | jq -r '.["PCC"][0].version')
 echo -e "PyCharm version is $PYCHARM_VERSION\n"
 echo -e "Downloading...\n"
 wget "https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz" -O PyCharm.tar.gz
