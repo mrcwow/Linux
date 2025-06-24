@@ -1,5 +1,7 @@
 #!/bin/bash
 
+time_script=$(date +%s)
+
 # Install Discord
 echo -e "Install Discord\n"
 # Removing old versions of Discord
@@ -20,6 +22,7 @@ sudo mv discord.desktop /opt/discord/discord.desktop
 sudo cp /opt/discord/discord.desktop /usr/share/applications/discord.desktop
 sudo rm -Rf Discord.tar.gz
 echo -e "\nDiscord was installed!\n"
+echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds\n"
 
 if [ "$1" = "boot" ]
 then
