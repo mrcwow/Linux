@@ -1,5 +1,7 @@
 #!/bin/bash
 
+time_script=$(date +%s)
+
 # Install PyCharm Community
 echo -e "Install PyCharm\n"
 # Removing old versions of PyCharm
@@ -20,6 +22,7 @@ if [ -n "$PYCHARM_VERSION" ] && [ "$PYCHARM_VERSION" != "null" ]; then
   sudo ln -sf /opt/pycharm-community-$PYCHARM_VERSION/bin/pycharm.sh /usr/bin/pycharm
   sudo rm -Rf PyCharm.tar.gz
   echo -e "PyCharm was installed!\n"
+  echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds\n"
 
   if [ "$1" = "boot" ]
   then
