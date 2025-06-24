@@ -12,10 +12,7 @@ ZOOM_VERSION=$(curl -s "https://support.zoom.com/hc/ru/article?id=zm_kb&sysparm_
 ZOOM_VERSION=$(echo "$ZOOM_VERSION" | sed 's/[()]//g; s/\s/./')
 echo -e "Current version: $ZOOM_VERSION\n"
 
-# Check arg for tar.xz installation
-if [ "$1" = "other" ]
-then
-    echo -e "Other distro\n"
+run_tar_xz_installation() {
     # Removing old versions of Zoom
     echo -e "Removing old versions of Zoom...\n"
     sudo rm -Rf /opt/zoom*
@@ -30,7 +27,14 @@ then
     wget https://raw.githubusercontent.com/mrcwow/Linux/main/assets/Zoom.desktop
     sudo mv Zoom.desktop /usr/share/applications/Zoom.desktop
     sudo rm -Rf Zoom.tar.xz
-    echo -e "Zoom was installed!\n"
+    echo -e "Zoom was installed!\n"    
+}
+
+# Check arg for tar.xz installation
+if [ "$1" = "other" ]
+then
+    echo -e "Other distro\n"
+    run_tar_xz_installation
 else
     # Detecting distro
     echo -e "Detecting distro...\n"
@@ -82,21 +86,7 @@ else
         echo -e "Zoom was installed!\n"
     else
         echo -e "Other distro\n"
-        # Removing old versions of Zoom
-        echo -e "Removing old versions of Zoom...\n"
-        sudo rm -Rf /opt/zoom*
-        sudo rm -Rf /usr/bin/zoom*
-        sudo rm -Rf /usr/share/applications/*Zoom*
-        sudo rm -Rf /home/$USER/.local/share/applications/*Zoom*
-        echo -e "Downloading...\n"
-        wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.tar.xz" -O Zoom.tar.xz
-        echo -e "\nInstalling...\n"
-        sudo tar -xpf Zoom.tar.xz -C /opt
-        sudo ln -sf /opt/zoom/ZoomLauncher /usr/bin/zoom
-        wget https://raw.githubusercontent.com/mrcwow/Linux/main/assets/Zoom.desktop
-        sudo mv Zoom.desktop /usr/share/applications/Zoom.desktop
-        sudo rm -Rf Zoom.tar.xz
-        echo -e "Zoom was installed!\n"
+        run_tar_xz_installation
     fi
 fi
 
