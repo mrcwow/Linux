@@ -17,7 +17,7 @@ Linux scripts and other features
 
 [Telegram](#telegram)
 
-[Zoom](#zoom) [Need update as new field on site]
+[Zoom](#zoom) [Zypper, dnf, yum distros use tar.xz as key issue for now]
 
 # Help and fix scripts for Linux.
 
@@ -128,8 +128,8 @@ wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmo
 ### Zoom
 4. Zoom install script. User data is stored separately, so it can be Zoom update script. Supports all official packages. Zoom has divided packages for different distros, therefore, after auto-detection of the distro the following package is installed:
 - Ubuntu/Debian/Mint - deb
-- OpenSuse - own rpm
-- Oracle Linux/CentOS/Red Hat/Fedora - rpm
+- OpenSuse - own rpm -> tar.xz for now as key issue
+- Oracle Linux/CentOS/Red Hat/Fedora - rpm -> tar.xz for now as key issue
 - Arch based - pkg.tar.xz
 - Other distro - simply tar.xz (use assets folder for desktop icon)
 
