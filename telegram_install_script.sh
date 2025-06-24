@@ -1,5 +1,7 @@
 #!/bin/bash
 
+time_script=$(date +%s)
+
 # Install Telegram
 echo -e "Install Telegram\n"
 # Removing old versions of Telegram
@@ -16,6 +18,7 @@ sudo mv /opt/Telegram /opt/telegram
 sudo ln -sf /opt/telegram/Telegram /usr/bin/telegram-desktop
 sudo rm -Rf Telegram.tar.xz
 echo -e "Telegram was installed!\n"
+echo -e "\nScript was executed in $(expr $(date +%s) - $time_script) seconds\n"
 
 if [ "$1" = "boot" ]
 then
