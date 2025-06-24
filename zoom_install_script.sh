@@ -48,34 +48,40 @@ else
         echo -e "Zoom was installed!\n"
     elif command -v zypper &> /dev/null; then
         echo -e "RPM (OpenSuse)\n"
-        echo -e "Downloading...\n"
-        wget "https://zoom.us/client/$ZOOM_VERSION/zoom_openSUSE_x86_64.rpm"
-        echo -e "\nInstalling...\n"
-        sudo zypper install ./zoom_openSUSE_x86_64.rpm -y
-        wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
-        sudo rpm --import package-signing-key.pub
-        sudo rm zoom_openSUSE_x86_64.rpm
-        echo -e "Zoom was installed!\n"
+        # echo -e "Downloading...\n"
+        # wget "https://zoom.us/client/$ZOOM_VERSION/zoom_openSUSE_x86_64.rpm"
+        # echo -e "\nInstalling...\n"
+        # sudo zypper install ./zoom_openSUSE_x86_64.rpm -y
+        # wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
+        # sudo rpm --import package-signing-key.pub
+        # sudo rm zoom_openSUSE_x86_64.rpm
+        # echo -e "Zoom was installed!\n"
+        echo -e "Tar.xz installation due key issue\n"
+        run_tar_xz_installation
     elif command -v dnf &> /dev/null; then
         echo -e "RPM (Oracle Linux/CentOS/Red Hat/Fedora modern versions)\n"
-        echo -e "Downloading...\n"
-        wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
-        echo -e "\nInstalling...\n"
-        sudo dnf install ./zoom_x86_64.rpm -y
-        wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
-        sudo rpm --import package-signing-key.pub
-        sudo rm zoom_x86_64.rpm
-        echo -e "Zoom was installed!\n"
+        # echo -e "Downloading...\n"
+        # wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
+        # echo -e "\nInstalling...\n"
+        # sudo dnf install ./zoom_x86_64.rpm -y
+        # wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
+        # sudo rpm --import package-signing-key.pub
+        # sudo rm zoom_x86_64.rpm
+        # echo -e "Zoom was installed!\n"
+        echo -e "Tar.xz installation due key issue\n"
+        run_tar_xz_installation
     elif command -v yum &> /dev/null; then
         echo -e "RPM (Oracle Linux/CentOS/Red Hat/Fedora old versions)\n"
-        echo -e "Downloading...\n"
-        wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
-        echo -e "\nInstalling...\n"
-        sudo yum install ./zoom_x86_64.rpm -y
-        wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
-        sudo rpm --import package-signing-key.pub
-        sudo rm zoom_x86_64.rpm
-        echo -e "Zoom was installed!\n"
+        # echo -e "Downloading...\n"
+        # wget "https://zoom.us/client/$ZOOM_VERSION/zoom_x86_64.rpm"
+        # echo -e "\nInstalling...\n"
+        # sudo yum install ./zoom_x86_64.rpm -y
+        # wget https://zoom.us/linux/download/pubkey?version=5-12-6 -O package-signing-key.pub
+        # sudo rpm --import package-signing-key.pub
+        # sudo rm zoom_x86_64.rpm
+        # echo -e "Zoom was installed!\n"
+        echo -e "Tar.xz installation due key issue\n"
+        run_tar_xz_installation
     elif command -v pacman &> /dev/null; then
         echo -e "Arch based\n"
         echo -e "Downloading...\n"
