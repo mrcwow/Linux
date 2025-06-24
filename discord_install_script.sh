@@ -15,16 +15,8 @@ sudo tar -xzf Discord.tar.gz -C /opt
 sudo mv /opt/Discord /opt/discord
 sudo ln -sf /opt/discord/Discord /usr/bin/discord
 sudo rm /opt/discord/discord.desktop
-echo "[Desktop Entry]
-Name=Discord
-StartupWMClass=discord
-Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
-GenericName=Internet Messenger
-Exec=/usr/bin/discord
-Icon=/opt/discord/discord.png
-Type=Application
-Categories=Network;InstantMessaging;
-Path=/usr/bin" | sudo tee -a /opt/discord/discord.desktop
+wget wget https://raw.githubusercontent.com/mrcwow/Linux/main/assets/discord.desktop
+sudo mv discord.desktop /opt/discord/discord.desktop
 sudo cp /opt/discord/discord.desktop /usr/share/applications/discord.desktop
 sudo rm -Rf Discord.tar.gz
 echo -e "\nDiscord was installed!\n"
