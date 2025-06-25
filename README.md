@@ -21,6 +21,8 @@ Linux scripts and other features
 
 # Help and fix scripts for Linux.
 
+[Snapper support for Kubuntu (also Ubuntu-based)](#snapper-support-for-kubuntu)
+
 [NVIDIA drivers for Fedora](#nvidia-drivers-for-fedora)
 
 [Resolve different codename: codename of distro and codename of program source](#resolve-different-codename)
@@ -192,4 +194,14 @@ chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
+```
+
+### Snapper support for Kubuntu
+3. Add snapper support for Kubuntu (btrfs backup system). Can be applied to *buntu and Ubuntu based distros (not tested). Include auto grub update for snapshots. Snapper config can be found at the link: [Snapper config](https://github.com/mrcwow/Linux/blob/main/assets/snapper_config)
+```
+chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/snapper_support_kubuntu.sh && chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
 ```
