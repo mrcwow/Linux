@@ -17,7 +17,7 @@ sudo tar -xzf Discord.tar.gz -C /opt
 sudo mv /opt/Discord /opt/discord
 sudo ln -sf /opt/discord/Discord /usr/bin/discord
 sudo rm /opt/discord/discord.desktop
-wget wget https://raw.githubusercontent.com/mrcwow/Linux/main/assets/discord.desktop
+wget https://raw.githubusercontent.com/mrcwow/Linux/main/assets/discord.desktop
 sudo mv discord.desktop /opt/discord/discord.desktop
 sudo cp /opt/discord/discord.desktop /usr/share/applications/discord.desktop
 sudo rm -Rf Discord.tar.gz
