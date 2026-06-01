@@ -11,7 +11,7 @@ Linux scripts and other features
 
 # Install and update scripts for Linux programs.
 
-[Discord](#discord)
+[Discord](#discord) [Need update as Discord added bootstrap model for installation process]
 
 [PyCharm](#pycharm)
 
