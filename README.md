@@ -5,7 +5,7 @@ Linux scripts and other features
 
 [EndeavourOS](#endeavouros)
 
-[Fedora](#fedora) [Need update as dnf5, last supported 40]
+[Fedora](#fedora)
 
 [Kubuntu](#kubuntu)
 
