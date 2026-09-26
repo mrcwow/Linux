@@ -88,7 +88,6 @@ sudo usermod -aG docker "$USER"
 sudo systemctl enable --now docker
 # If without Edge
 # sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/vscode/config.repo
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 sudo dnf install code -y
 # Install PyCharm Community
