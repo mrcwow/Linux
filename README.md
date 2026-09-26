@@ -11,13 +11,13 @@ Linux scripts and other features
 
 # Install and update scripts for Linux programs.
 
-[Discord](#discord) [Need update as Discord added bootstrap model for installation process]
+[Discord](#discord)
 
 [PyCharm](#pycharm)
 
 [Telegram](#telegram)
 
-[Zoom](#zoom) [Zypper, dnf, yum distros use tar.xz as key issue for now]
+[Zoom](#zoom)
 
 # Help and fix scripts for Linux.
 
@@ -72,7 +72,7 @@ wget https://github.com/mrcwow/Linux/raw/main/post_install_kubuntu.sh && chmod +
 ## Install and update scripts for Linux programs.
 
 ### Discord
-1. Discord install script. User data is stored separately, so it can be Discord update script. Use argument "boot" for initial launch within the script.
+1. Discord install script. User data is stored separately, so it can be Discord update script, but Discord recently add bootstrap model for this case. Use argument "boot" for initial launch within the script.
 ```
 chmod +x discord_install_script.sh && ./discord_install_script.sh
 ```
@@ -90,7 +90,7 @@ wget https://github.com/mrcwow/Linux/raw/main/discord_install_script.sh && chmod
 ```
 
 ### PyCharm
-2. PyCharm install script. User data is stored separately, so it can be PyCharm update script. Developed for PyCharm Community, but can be applied to PyCharm Professional by editing the "community" part to "professional" in the script. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
+2. PyCharm install script. User data is stored separately, so it can be PyCharm update script. Developed for PyCharm as one unified product PCC and PCP. The script is fully automatic and takes fresh version from official site with auto detection. Use argument "boot" for initial launch within the script.
 ```
 chmod +x pycharm_install_script.sh && ./pycharm_install_script.sh
 ```
@@ -128,8 +128,8 @@ wget https://github.com/mrcwow/Linux/raw/main/telegram_install_script.sh && chmo
 ### Zoom
 4. Zoom install script. User data is stored separately, so it can be Zoom update script. Supports all official packages. Zoom has divided packages for different distros, therefore, after auto-detection of the distro the following package is installed:
 - Ubuntu/Debian/Mint - deb
-- OpenSuse - own rpm -> tar.xz for now as key issue
-- Oracle Linux/CentOS/Red Hat/Fedora - rpm -> tar.xz for now as key issue
+- OpenSuse - own rpm
+- Oracle Linux/CentOS/Red Hat/Fedora - rpm
 - Arch based - pkg.tar.xz
 - Other distro - simply tar.xz (use assets folder for desktop icon)
 
