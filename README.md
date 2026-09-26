@@ -177,6 +177,8 @@ wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod 
 ### Cross-platform script template
 3. Cross-platform script template powered by Powershell 6+. Script uses `pwsh` for *Windows* and `bash` for *Linux* and is wrapped in `pwsh`. One can create a branch for *MacOS* using `elseif ($IsMacOS)`.
 
+Given powering by Powershell, all OSs should contain Powershell package. Check about installation one can on the official website: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell
+
 Download the script template for edit:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/cross_platform_script_template.ps1
