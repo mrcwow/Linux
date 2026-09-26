@@ -25,6 +25,8 @@ Linux scripts and other features
 
 [NVIDIA drivers for Fedora](#nvidia-drivers-for-fedora)
 
+[Cross-platform script template](#cross-platform-script-template)
+
 [Resolve different codename: codename of distro and codename of program source](#resolve-different-codename)
 ***
 ## Post install scripts for Linux distros.
@@ -152,8 +154,18 @@ wget https://github.com/mrcwow/Linux/raw/main/zoom_install_script.sh && chmod +x
 ***
 ## Help and fix scripts for Linux.
 
+### Snapper support for Kubuntu
+1. Add snapper support for Kubuntu (btrfs backup system). Can be applied to *buntu and Ubuntu based distros (probably even Debian based) - not tested. Include auto grub update for snapshots and GUI `btrfs-assistant`. Snapper config can be found at the link: [Snapper config](https://github.com/mrcwow/Linux/blob/main/assets/snapper_config)
+```
+chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
+```
+With downloading the script:
+```
+wget https://github.com/mrcwow/Linux/raw/main/snapper_support_kubuntu.sh && chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
+```
+
 ### NVIDIA drivers for Fedora
-1. NVIDIA drivers for Fedora. Dnf5 attention!
+2. NVIDIA drivers for Fedora. Dnf5 attention!
 ```
 chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
@@ -162,8 +174,20 @@ With downloading the script:
 wget https://github.com/mrcwow/Linux/raw/main/nvidia_install_fedora.sh && chmod +x nvidia_install_fedora.sh && ./nvidia_install_fedora.sh
 ```
 
+### Cross-platform script template
+3. Cross-platform script template powered by Powershell 6+. Script uses `pwsh` for *Windows* and `bash` for *Linux* and is wrapped in `pwsh`. One can create a branch for *MacOS* using `elseif ($IsMacOS)`.
+
+Download the script template for edit:
+```
+wget https://github.com/mrcwow/Linux/raw/main/cross_platform_script_template.ps1
+```
+After edit run using:
+```
+chmod +x cross_platform_script_template.ps1 && ./cross_platform_script_template.ps1
+```
+
 ### Resolve different codename
-2. Resolve different codename: codename of distro and codename of program source.
+4. Resolve different codename: codename of distro and codename of program source.
 ```
 Fix for Err:16 https://ppa.launchpadcontent.net/appimagelauncher-team/stable/ubuntu noble Release
   
@@ -178,7 +202,7 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 Developed for appimagelauncher, but can be changed for other program. During installation of appimagelauncher at 59 line at 24.04
 error libappimage0 (>= 0.1.6) !!!
 
-Script for Kubuntu and Ubuntu, Debian based distros. Developed for Kubuntu, can be applied to Ubuntu, Debian based distros(not tested).
+Script for Kubuntu and Ubuntu, Debian based distros. Developed for Kubuntu, can be applied to Ubuntu, Debian based distros (not tested).
 1. Download the script
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh
@@ -192,14 +216,4 @@ chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
 With downloading the script:
 ```
 wget https://github.com/mrcwow/Linux/raw/main/different_codename_resolve.sh && chmod +x different_codename_resolve.sh && ./different_codename_resolve.sh
-```
-
-### Snapper support for Kubuntu
-3. Add snapper support for Kubuntu (btrfs backup system). Can be applied to *buntu and Ubuntu based distros (not tested). Include auto grub update for snapshots. Snapper config can be found at the link: [Snapper config](https://github.com/mrcwow/Linux/blob/main/assets/snapper_config)
-```
-chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
-```
-With downloading the script:
-```
-wget https://github.com/mrcwow/Linux/raw/main/snapper_support_kubuntu.sh && chmod +x snapper_support_kubuntu.sh && ./snapper_support_kubuntu.sh
 ```
